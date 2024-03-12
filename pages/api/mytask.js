@@ -8,7 +8,7 @@ const handler = asyncError(async (req, res) => {
   await connectDB();
 
   const user = await checkAuth(req);
-
+  console.log("hllo");
   if (!user) return errorHandler(res, 401, "Login First");
 
   const tasks = await Task.find({ user: user._id });
